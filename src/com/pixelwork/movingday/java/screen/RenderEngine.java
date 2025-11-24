@@ -6,6 +6,7 @@ public class RenderEngine {
 	public TextureHandler texturehandler;
 	
 	public RenderEngine(Screen screen) {
+		this.screen = screen;
 		this.texturehandler = new TextureHandler(this);
 		this.render = new Render(this);
 	}

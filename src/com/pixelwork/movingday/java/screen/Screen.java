@@ -37,7 +37,7 @@ public class Screen extends Canvas implements Runnable {
 			
 			long now = System.nanoTime();
 			long frameTime = now - currenttime;
-			long sleepTime = (long) fpsCalc - now;
+			long sleepTime = (long) fpsCalc - frameTime;
 			if(sleepTime > 0) {
 				try {
 					Thread.sleep(sleepTime / 1000000);

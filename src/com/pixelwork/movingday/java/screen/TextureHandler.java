@@ -32,8 +32,11 @@ public class TextureHandler {
 		
 		for(int xx = 0; xx < width; xx++) {
 			for(int yy = 0; yy < height; yy++) {
-				BufferedImage toDraw = this.textureList[x + xx][y + yy];
-				g.drawImage(toDraw, x * spotSize, y * spotSize, null);
+				int currentX = x + xx;
+				int currentY = x + yy;
+				BufferedImage toDraw = this.textureList[currentX][currentY];
+				
+				g.drawImage(toDraw, xx * 8, yy * 8, null);
 			}
 		}
 		
@@ -46,7 +49,7 @@ public class TextureHandler {
 		
 		for(int x = 0; x < 32; x++) {
 			for(int y = 0; y < 32; y++) {
-				this.textureList[x][y] = this.sheet.getSubimage(x, y, spotSize, spotSize);
+				this.textureList[x][y] = this.sheet.getSubimage(x * 8, y * 8, spotSize, spotSize);
 			}
 		}
 	}
