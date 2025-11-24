@@ -4,11 +4,13 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import com.pixelwork.movingday.java.screen.Screen;
+
 public class MovingDay {
 	public static final int RESOLUTIONX = 210;
 	public static final int RESOLUTIONY = 156;
 	
-	private static final int SCALE = 3;
+	private static final int SCALE = 4;
 	
 	public static final int WIDTH = RESOLUTIONX * SCALE;
 	public static final int HEIGHT = RESOLUTIONY * SCALE;
@@ -20,6 +22,11 @@ public class MovingDay {
 		
 		frame.setTitle(TITLE);
 		
+		Screen screen = new Screen();
+		
+		frame.add(screen);
+		frame.pack();
+		
 		frame.setSize(new Dimension(WIDTH, HEIGHT));
 		frame.setFocusable(true);
 		frame.setResizable(false);
@@ -27,5 +34,8 @@ public class MovingDay {
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		
+		screen.initBuffers();
+		screen.start();
 	}
 }
