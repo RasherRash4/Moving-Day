@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 import com.pixelwork.movingday.java.screen.Screen;
+import com.pixelwork.movingday.java.world.Generator;
 
 public class MovingDay {
 	public static final int RESOLUTIONX = 210;
@@ -17,12 +18,15 @@ public class MovingDay {
 	
 	public static final String TITLE = "Moving Day";
 	
+	public static Generator GENERATOR;
+	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		
 		frame.setTitle(TITLE);
 		
 		Screen screen = new Screen();
+		GENERATOR = new Generator();
 		
 		frame.add(screen);
 		frame.pack();
@@ -36,6 +40,7 @@ public class MovingDay {
 		frame.setVisible(true);
 		
 		screen.initBuffers();
+		
 		screen.start();
 	}
 }

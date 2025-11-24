@@ -22,4 +22,8 @@ public class Chunk {
 			this.tiles[x][y][layer] = copyCat;
 		}
 	}
+	
+	public Tile getTile(int x, int y, int layer) {
+		return this.tiles[x][y][layer];
+	}
 }
