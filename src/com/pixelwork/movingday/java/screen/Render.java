@@ -8,16 +8,16 @@ import java.awt.image.BufferedImage;
 import com.pixelwork.movingday.client.MovingDay;
 
 public class Render {
-	public Screen screen;
+	public RenderEngine renderengine;
 	
 	private BufferedImage CANVAS = new BufferedImage(MovingDay.RESOLUTIONX, MovingDay.RESOLUTIONY, BufferedImage.TYPE_INT_ARGB);
 	
-	public Render(Screen screen) {
-		this.screen = screen;
+	public Render(RenderEngine renderengine) {
+		this.renderengine = renderengine;
 	}
 	
 	public void paint() {
-		BufferStrategy bs = this.screen.getBufferStrategy();
+		BufferStrategy bs = this.renderengine.screen.getBufferStrategy();
 		
 		Graphics g = CANVAS.getGraphics();
 		
