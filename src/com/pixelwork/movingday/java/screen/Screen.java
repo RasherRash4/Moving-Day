@@ -25,7 +25,7 @@ public class Screen extends Canvas implements Runnable {
 	public void run() {
 		long lasttime = System.nanoTime();
 		double delta;
-		double fpsCalc = 1000000000.0 / 60.0;
+		double fpsCalc = 1000000000.0 / 144.0;
 		while(running) {
 			long currenttime = System.nanoTime();
 			delta = (currenttime - lasttime) / 1000000000.0;
