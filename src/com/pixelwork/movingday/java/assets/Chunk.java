@@ -14,6 +14,12 @@ public class Chunk {
 	}
 	
 	public void setTile(int x, int y, int layer, Tile newTile) {
-		
+		if(newTile == null) {
+			this.tiles[x][y][layer] = null;
+		}else {
+			Tile copyCat = newTile.makeCopy();
+			
+			this.tiles[x][y][layer] = copyCat;
+		}
 	}
 }

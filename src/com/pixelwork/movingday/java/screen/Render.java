@@ -24,8 +24,6 @@ public class Render {
 		g.setColor(new Color(0, 0, 0));
 		g.fillRect(0, 0, MovingDay.RESOLUTIONX, MovingDay.RESOLUTIONY);
 		
-		g.drawImage(this.renderengine.texturehandler.getTexture(0, 0, 2, 2), 0, 0, null);
-		
 		g = bs.getDrawGraphics();
 		g.drawImage(CANVAS, 0, 0, MovingDay.WIDTH, MovingDay.HEIGHT, null);
 		
