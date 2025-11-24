@@ -3,10 +3,10 @@ package com.pixelwork.movingday.java.screen;
 import com.pixelwork.movingday.java.assets.Chunk;
 import com.pixelwork.movingday.java.assets.tiles.Tile;
 
-public class RenderTile {
+public class RenderWorld {
 	private RenderEngine renderengine;
 	
-	public RenderTile(RenderEngine renderengine) {
+	public RenderWorld(RenderEngine renderengine) {
 		this.renderengine = renderengine;
 	}
 	

@@ -6,6 +6,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import com.pixelwork.movingday.client.MovingDay;
+import com.pixelwork.movingday.java.assets.Chunk;
 
 public class Render {
 	private RenderEngine renderengine;
@@ -30,6 +31,9 @@ public class Render {
 		
 		g.setColor(new Color(0, 0, 0));
 		g.fillRect(0, 0, MovingDay.RESOLUTIONX, MovingDay.RESOLUTIONY);
+		
+		Chunk toRender = MovingDay.GENERATOR.worldgenerator.level.getChunk(0, 0);
+		this.renderengine.render_world.renderChunk(toRender);
 		
 		g = bs.getDrawGraphics();
 		g.drawImage(CANVAS, 0, 0, MovingDay.WIDTH, MovingDay.HEIGHT, null);
