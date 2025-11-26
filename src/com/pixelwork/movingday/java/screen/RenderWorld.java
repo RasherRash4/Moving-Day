@@ -17,14 +17,21 @@ public class RenderWorld {
 					Tile currentTile = chunk.getTile(x, y, l);
 					
 					if(currentTile != null) {
-						int[] tPos = new int[2];
-						tPos[0] = (currentTile.textureindex % 32);
-						tPos[1] = (currentTile.textureindex / 32);
+						int[] POS = new int[2];
+						int tX = this.renderengine.cullmanager.camera.position[0] + ((x * 8) + (chunk.pos[0] * (Chunk.WIDTH * 8)));
+						int tY = this.renderengine.cullmanager.camera.position[1] + ((y * 8) + (chunk.pos[1] * (Chunk.HEIGHT * 8)));
+						POS[0] = tX;
+						POS[1] = tY;
 						
-						int tX = x * 8;
-						int tY = y * 8;
+						boolean canRender = this.renderengine.cullmanager.camera.checkCullingBlock(currentTile, POS);
 						
-						this.renderengine.render.renderImage(currentTile.scale, tPos, tX, tY);
+						if(canRender) {
+							int[] tPos = new int[2];
+							tPos[0] = (currentTile.textureindex % 32);
+							tPos[1] = (currentTile.textureindex / 32);
+							
+							this.renderengine.render.renderImage(currentTile.scale, tPos, tX, tY);
+						}
 					}
 				}
 			}

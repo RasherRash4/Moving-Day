@@ -10,7 +10,10 @@ public class Level {
 	}
 	
 	public void addChunk(int x, int y) {
-		this.chunks[x][y] = new Chunk();
+		Chunk newChunk = new Chunk();
+		newChunk.pos[0] = x;
+		newChunk.pos[1] = y;
+		this.chunks[x][y] = newChunk;
 	}
 	
 	public void removeChunk(int x, int y) {

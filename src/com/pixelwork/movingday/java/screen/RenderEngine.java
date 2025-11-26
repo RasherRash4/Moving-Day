@@ -5,11 +5,13 @@ public class RenderEngine {
 	public Render render;
 	public RenderWorld render_world;
 	public TextureHandler texturehandler;
+	public CullManager cullmanager;
 	
 	public RenderEngine(Screen screen) {
 		this.screen = screen;
 		this.texturehandler = new TextureHandler(this);
 		this.render = new Render(this);
 		this.render_world = new RenderWorld(this);
+		this.cullmanager = new CullManager(this);
 	}
 }

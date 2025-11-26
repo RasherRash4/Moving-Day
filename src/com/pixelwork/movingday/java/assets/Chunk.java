@@ -13,6 +13,8 @@ public class Chunk {
 	
 	private Tile[][][] tiles;
 	private List<Entity> entities;
+	private int nextID = 0;
+	public int[] pos = new int[2];
 	
 	public Chunk() {
 		this.tiles = new Tile[WIDTH][HEIGHT][LAYERS];
@@ -38,6 +40,36 @@ public class Chunk {
 	}
 	
 	public void addEntity(double[] pos, Entity entity) {
+		Entity copyCat = entity.Copy();
 		
+		copyCat.position = pos;
+		copyCat.wid = this.nextID;
+		this.nextID++;
+		
+		this.entities.add(copyCat);
+	}
+	
+	public void delEntity(Entity entity) {
+		this.entities.remove(entity);
+	}
+	
+	public Entity getEntity(double[] pos) {
+		for(Entity currentEntity : this.entities) {
+			if(currentEntity.position[0] == pos[0] && currentEntity.position[1] == pos[1]) {
+				return currentEntity;
+			}
+		}
+		
+		return null;
+	}
+	
+	public Entity getEntity(int id) {
+		for(Entity currentEntity : this.entities) {
+			if(currentEntity.wid == id) {
+				return currentEntity;
+			}
+		}
+		
+		return null;
 	}
 }
