@@ -1,5 +1,7 @@
 package com.pixelwork.movingday.java.assets.tiles;
 
+import com.pixelwork.movingday.java.assets.types.tiles.TileType;
+
 public class Tile {
 	public static final Tile[] tileList = new Tile[512];
 	
@@ -11,6 +13,7 @@ public class Tile {
 	public int[] scale = new int[2];
 	public boolean collidable;
 	public int rid;
+	public TileType type;
 	
 	protected Tile(int newID, int newTexture) {
 		if(tileList[newID] != null) {
@@ -40,6 +43,11 @@ public class Tile {
 	
 	protected Tile canCollide(boolean arg0) {
 		this.collidable = arg0;
+		return this;
+	}
+	
+	protected Tile setType(TileType type) {
+		this.type = type;
 		return this;
 	}
 	

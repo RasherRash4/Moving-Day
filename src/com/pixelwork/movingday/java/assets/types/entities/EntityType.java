@@ -4,7 +4,8 @@ import com.pixelwork.movingday.java.assets.entities.Entity;
 
 public class EntityType {
 	public static final EntityType none = new EntityType().setSpecialType(0).isAi(false);
-	public static final EntityType player = new EntityType().setSpecialType(1).isAi(false);
+	public static final EntityType player = new EntityTypePlayer().setSpecialType(1).isAi(false);
+	public static final EntityType item = new EntityTypeItem().setSpecialType(2).isAi(false);
 	
 	private int type;
 	private boolean hasAi;

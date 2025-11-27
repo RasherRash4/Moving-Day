@@ -8,7 +8,7 @@ public class Entity {
 	public int textureindex;
 	public int[] offset = new int[2];
 	public EntityType type;
-	public int wid;
+	public int wid, cid;
 	
 	public Entity Copy() {
 		Entity newCopy = new Entity();
