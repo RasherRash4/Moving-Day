@@ -2,8 +2,11 @@ package com.pixelwork.movingday.java.screen;
 
 import java.awt.Canvas;
 
+import com.pixelwork.movingday.java.font.FontEngine;
+
 public class Screen extends Canvas implements Runnable {
 	public RenderEngine screenRenderEngine;
+	public FontEngine screenFontEngine;
 	
 	private static final long serialVersionUID = 1L;
 	private boolean running = false;
@@ -16,6 +19,7 @@ public class Screen extends Canvas implements Runnable {
 	
 	public void start() {
 		this.screenRenderEngine = new RenderEngine(this);
+		this.screenFontEngine = new FontEngine(this.screenRenderEngine);
 		
 		running = true;
 		new Thread(this).start();

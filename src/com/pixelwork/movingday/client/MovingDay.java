@@ -8,15 +8,18 @@ import com.pixelwork.movingday.java.screen.Screen;
 import com.pixelwork.movingday.java.world.Generator;
 
 public class MovingDay {
-	public static final int RESOLUTIONX = 210;
-	public static final int RESOLUTIONY = 156;
+	public static final int RESOLUTIONX = 286;
+	public static final int RESOLUTIONY = 186;
 	
-	private static final int SCALE = 4;
+	private static final int SCALE = 3;
 	
 	public static final int WIDTH = RESOLUTIONX * SCALE;
 	public static final int HEIGHT = RESOLUTIONY * SCALE;
 	
 	public static final String TITLE = "Moving Day";
+	
+	public static int[] VERSION = new int[3];
+	public static String VERSION_TITLE = null;
 	
 	public static Generator GENERATOR;
 	
@@ -24,6 +27,12 @@ public class MovingDay {
 		JFrame frame = new JFrame();
 		
 		frame.setTitle(TITLE);
+		
+		VERSION[0] = 0;
+		VERSION[1] = 0;
+		VERSION[2] = 1;
+		
+		VERSION_TITLE = "alpha " + VERSION[0] + "." + VERSION[1] + "." + VERSION[2];
 		
 		Screen screen = new Screen();
 		GENERATOR = new Generator();

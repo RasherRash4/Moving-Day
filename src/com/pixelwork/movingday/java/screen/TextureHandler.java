@@ -33,7 +33,7 @@ public class TextureHandler {
 		for(int xx = 0; xx < width; xx++) {
 			for(int yy = 0; yy < height; yy++) {
 				int currentX = x + xx;
-				int currentY = x + yy;
+				int currentY = y + yy;
 				BufferedImage toDraw = this.textureList[currentX][currentY];
 				
 				g.drawImage(toDraw, xx * 8, yy * 8, null);
