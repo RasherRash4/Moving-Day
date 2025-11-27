@@ -22,12 +22,18 @@ public class Chunk {
 	}
 	
 	public void setTile(int x, int y, int layer, Tile newTile) {
-		if(newTile == null) {
-			this.tiles[x][y][layer] = null;
+		boolean canSet = x < WIDTH && x >= 0 && layer < LAYERS && layer >= 0;
+		
+		if(canSet) {
+			if(newTile == null) {
+				this.tiles[x][y][layer] = null;
+			}else {
+				Tile copyCat = newTile.makeCopy();
+				
+				this.tiles[x][y][layer] = copyCat;
+			}
 		}else {
-			Tile copyCat = newTile.makeCopy();
-			
-			this.tiles[x][y][layer] = copyCat;
+			throw new IllegalArgumentException("Too high or low of a layer, or x, y coordinate");
 		}
 	}
 	

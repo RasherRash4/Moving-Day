@@ -1,8 +1,5 @@
 package com.pixelwork.movingday.java.world;
 
-import com.pixelwork.movingday.java.assets.Chunk;
-import com.pixelwork.movingday.java.assets.tiles.Tile;
-
 public class WorldGenerator {
 	public Level level;
 	private Generator generator;
@@ -13,9 +10,6 @@ public class WorldGenerator {
 				this.level.addChunk(x, y);
 			}
 		}
-		
-		Chunk toAdd = this.level.getChunk(0, 0);
-		toAdd.setTile(0, 5, 0, Tile.test);
 	}
 	
 	public WorldGenerator(Generator generator) {
